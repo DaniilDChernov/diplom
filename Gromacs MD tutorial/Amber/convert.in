@@ -1,0 +1,3 @@
+parm topol.top
+trajin md_0_10.xtc
+trajout md_0_10.mdcrd mdcrd

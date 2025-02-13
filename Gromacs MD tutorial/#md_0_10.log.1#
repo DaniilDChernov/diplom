@@ -1,0 +1,612 @@
+                :-) GROMACS - gmx mdrun, 2024.3-conda_forge (-:
+
+Copyright 1991-2024 The GROMACS Authors.
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+                         Current GROMACS contributors:
+       Mark Abraham           Andrey Alekseenko           Vladimir Basov      
+      Cathrine Bergh            Eliane Briand               Ania Brown        
+      Mahesh Doijade            Giacomo Fiorin          Stefan Fleischmann    
+      Sergey Gorelov         Gilles Gouaillardet            Alan Gray         
+     M. Eric Irrgang         Farzaneh Jalalypour            Joe Jordan        
+     Carsten Kutzner           Justin A. Lemkul          Magnus Lundborg      
+       Pascal Merz              Vedran Miletic            Dmitry Morozov      
+       Julien Nabet              Szilard Pall        Andrea Pasquadibisceglie 
+    Michele Pellegrino          Hubert Santuz             Roland Schulz       
+     Tatiana Shugaeva          Alexey Shvetsov            Philip Turner       
+     Alessandra Villa      Sebastian Wingbermuehle  
+
+                         Previous GROMACS contributors:
+        Emile Apol             Rossen Apostolov           James Barnett       
+        Paul Bauer          Herman J.C. Berendsen          Par Bjelkmar       
+      Christian Blau          Viacheslav Bolnykh            Kevin Boyd        
+    Aldert van Buuren          Carlo Camilloni           Rudi van Drunen      
+      Anton Feenstra           Oliver Fleetwood            Vytas Gapsys       
+       Gaurav Garg             Gerrit Groenhof            Bert de Groot       
+      Anca Hamuraru           Vincent Hindriksen          Victor Holanda      
+     Aleksei Iupinov          Christoph Junghans        Prashanth Kanduri     
+   Dimitrios Karkoulis           Peter Kasson             Sebastian Kehl      
+     Sebastian Keller             Jiri Kraus               Per Larsson        
+      Viveca Lindahl            Erik Marklund           Pieter Meulenhoff     
+      Teemu Murtola              Sander Pronk             Michael Shirts      
+      Alfons Sijbers            Balint Soproni         David van der Spoel    
+      Peter Tieleman            Carsten Uphoff             Jon Vincent        
+     Teemu Virolainen         Christian Wennberg           Maarten Wolf       
+      Artem Zhmurov       
+
+                  Coordinated by the GROMACS project leaders:
+                           Berk Hess and Erik Lindahl
+
+GROMACS:      gmx mdrun, version 2024.3-conda_forge
+Executable:   /home/daniil/miniconda3/envs/md-intro-tutorial/bin.AVX2_256/gmx
+Data prefix:  /home/daniil/miniconda3/envs/md-intro-tutorial
+Working dir:  /home/daniil/Downloads/Protein-ligand
+Process ID:   27800
+Command line:
+  gmx mdrun -deffnm md_0_10
+
+GROMACS version:     2024.3-conda_forge
+Precision:           mixed
+Memory model:        64 bit
+MPI library:         thread_mpi
+OpenMP support:      enabled (GMX_OPENMP_MAX_THREADS = 128)
+GPU support:         OpenCL
+NBNxM GPU setup:     super-cluster 2x2x2 / cluster 8
+SIMD instructions:   AVX2_256
+CPU FFT library:     fftw-3.3.10-sse2-avx
+GPU FFT library:     clFFT
+Multi-GPU FFT:       none
+RDTSCP usage:        disabled
+TNG support:         enabled
+Hwloc support:       disabled
+Tracing support:     disabled
+C compiler:          /home/conda/feedstock_root/build_artifacts/gromacs_1727605515830/_build_env/bin/x86_64-conda-linux-gnu-cc GNU 13.3.0
+C compiler flags:    -fexcess-precision=fast -funroll-all-loops -mavx2 -mfma -Wno-missing-field-initializers -O3 -DNDEBUG
+C++ compiler:        /home/conda/feedstock_root/build_artifacts/gromacs_1727605515830/_build_env/bin/x86_64-conda-linux-gnu-c++ GNU 13.3.0
+C++ compiler flags:  -fexcess-precision=fast -funroll-all-loops -mavx2 -mfma -Wno-missing-field-initializers -Wno-cast-function-type-strict SHELL:-fopenmp -O3 -DNDEBUG
+BLAS library:        Internal
+LAPACK library:      Internal
+OpenCL include dir:  /home/daniil/miniconda3/envs/md-intro-tutorial/include
+OpenCL library:      /home/daniil/miniconda3/envs/md-intro-tutorial/lib/libOpenCL.so
+OpenCL version:      3.0
+
+
+Running on 1 node with total 2 cores, 2 processing units (GPU detection failed)
+Hardware detected on host daniil:
+  CPU info:
+    Vendor: AMD
+    Brand:  AMD Ryzen 5 5500U with Radeon Graphics         
+    Family: 23   Model: 104   Stepping: 1
+    Features: aes amd apic avx avx2 clfsh cmov cx8 cx16 f16c fma lahf misalignsse mmx msr nonstop_tsc pclmuldq pdpe1gb popcnt pse rdrnd rdtscp sha sse2 sse3 sse4a sse4.1 sse4.2 ssse3 x2apic
+  Hardware topology: Basic
+    Packages, cores, and logical processors:
+    [indices refer to OS logical processors]
+      Package  0: [   0]
+      Package  2: [   1]
+    CPU limit set by OS: -1   Recommended max number of threads: 2
+
+The current CPU can measure timings more accurately than the code in
+gmx mdrun was configured to use. This might affect your simulation
+speed as accurate timings are needed for load-balancing.
+Please consider rebuilding gmx mdrun with the GMX_USE_RDTSCP=ON CMake option.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = md
+   tinit                          = 0
+   dt                             = 0.002
+   nsteps                         = 5000000
+   init-step                      = 0
+   simulation-part                = 1
+   mts                            = false
+   mass-repartition-factor        = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = 1606382587
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 5000
+   nstcalcenergy                  = 100
+   nstenergy                      = 5000
+   nstxout-compressed             = 5000
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 20
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   verlet-buffer-pressure-tolerance = 0.5
+   rlist                          = 1.223
+   coulombtype                    = PME
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.2
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Force-switch
+   rvdw-switch                    = 1
+   rvdw                           = 1.2
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.16
+   fourier-nx                     = 52
+   fourier-ny                     = 52
+   fourier-nz                     = 52
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 3d
+   epsilon-surface                = 0
+   ensemble-temperature-setting   = constant
+   ensemble-temperature           = 300
+   tcoupl                         = V-rescale
+   nsttcouple                     = 10
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = Parrinello-Rahman
+   pcoupltype                     = Isotropic
+   nstpcouple                     = 50
+   tau-p                          = 2
+   compressibility (3x3):
+      compressibility[    0]={ 4.50000e-05,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  4.50000e-05,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  4.50000e-05}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = false
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = true
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   awh                            = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+     density-guided-simulation:
+       active                     = false
+       group                      = protein
+       similarity-measure         = inner-product
+       atom-spreading-weight      = unity
+       force-constant             = 1e+09
+       gaussian-transform-spreading-width = 0.2
+       gaussian-transform-spreading-range-in-multiples-of-width = 4
+       reference-density-filename = reference.mrc
+       nst                        = 1
+       normalize-densities        = true
+       adaptive-force-scaling     = false
+       adaptive-force-scaling-time-constant = 4
+       shift-vector               = 
+       transformation-matrix      = 
+     qmmm-cp2k:
+       active                     = false
+       qmgroup                    = System
+       qmmethod                   = PBE
+       qmfilenames                = 
+       qmcharge                   = 0
+       qmmultiplicity             = 1
+     colvars:
+       active                     = false
+       configfile                 = 
+       seed                       = -1
+grpopts:
+   nrdf:     6582.71     61743.3
+   ref-t:         300         300
+   tau-t:         0.1         0.1
+annealing:          No          No
+annealing-npoints:           0           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+Changing nstlist from 20 to 80, rlist from 1.223 to 1.322
+
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Initializing Domain Decomposition on 1 ranks
+Dynamic load balancing: auto
+Minimum cell size due to atom displacement: 0.631 nm
+Initial maximum distances in bonded interactions:
+    two-body bonded interactions: 0.430 nm, LJ-14, atoms 1677 1685
+  multi-body bonded interactions: 0.492 nm, CMAP Dih., atoms 18 34
+Minimum cell size due to bonded interactions: 0.542 nm
+Maximum distance for 5 constraints, at 120 deg. angles, all-trans: 0.222 nm
+Estimated maximum distance required for P-LINCS: 0.222 nm
+Using 0 separate PME ranks because: there are too few total ranks for efficient splitting
+Optimizing the DD grid for 1 cells with a minimum initial size of 0.631 nm
+The maximum allowed number of cells is: X 10 Y 10 Z 8
+Domain decomposition grid 1 x 1 x 1, separate PME ranks 0
+PME domain decomposition: 1 x 1 x 1
+
+The initial number of communication pulses is:
+The initial domain decomposition cell size is:
+
+The maximum allowed distance for atoms involved in interactions is:
+                 non-bonded interactions           1.322 nm
+(the following are initial values, they could change due to box deformation)
+            two-body bonded interactions  (-rdd)   1.322 nm
+          multi-body bonded interactions  (-rdd)   1.322 nm
+  atoms separated by up to 5 constraints  (-rcon)  5.477 nm
+
+When dynamic load balancing gets turned on, these settings will change to:
+The maximum number of communication pulses is:
+The minimum size for domain decomposition cells is 1.322 nm
+The requested allowed shrink of DD cells (option -dds) is: 0.80
+The allowed shrink of domain decomposition cells is:
+The maximum allowed distance for atoms involved in interactions is:
+                 non-bonded interactions           1.322 nm
+            two-body bonded interactions  (-rdd)   1.322 nm
+          multi-body bonded interactions  (-rdd)   1.322 nm
+  atoms separated by up to 5 constraints  (-rcon)  1.322 nm
+
+Using 1 MPI thread
+Using 2 OpenMP threads 
+
+System total charge: 0.000
+Will do PME sum in reciprocal space for electrostatic interactions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee and L. G. Pedersen 
+A smooth particle mesh Ewald method
+J. Chem. Phys. 103 (1995) pp. 8577-8592
+-------- -------- --- Thank You --- -------- --------
+
+Using a Gaussian width (1/beta) of 0.384195 nm for Ewald
+Potential shift: LJ r^-12: -2.648e-01 r^-6: -5.349e-01, Ewald -8.333e-06
+Initialized non-bonded Coulomb Ewald tables, spacing: 1.02e-03 size: 1176
+
+Generated table with 1161 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1161 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1161 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+
+
+Using SIMD4xM 4x8 nonbonded short-range kernels
+
+Using a dual 4x8 pair-list setup updated with dynamic pruning:
+  outer list: updated every 80 steps, buffer 0.122 nm, rlist 1.322 nm
+  inner list: updated every 12 steps, buffer 0.000 nm, rlist 1.200 nm
+At tolerance 0.005 kJ/mol/ps per atom, equivalent classical 1x1 list would be:
+  outer list: updated every 80 steps, buffer 0.266 nm, rlist 1.466 nm
+  inner list: updated every 12 steps, buffer 0.046 nm, rlist 1.246 nm
+
+The average pressure is off by at most 0.20 bar due to missing LJ interactions
+
+Linking all bonded interactions to atoms
+
+
+Pinning threads with an auto-selected logical cpu stride of 1
+
+Initializing Parallel LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 1325
+There are constraints between atoms in different decomposition domains,
+will communicate selected coordinates each lincs iteration
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Miyamoto and P. A. Kollman
+SETTLE: An Analytical Version of the SHAKE and RATTLE Algorithms for Rigid
+Water Models
+J. Comp. Chem. 13 (1992) pp. 952-962
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+G. Bussi, D. Donadio and M. Parrinello
+Canonical sampling through velocity rescaling
+J. Chem. Phys. 126 (2007) pp. 014101
+-------- -------- --- Thank You --- -------- --------
+
+There are: 33506 Atoms
+Atom distribution over 1 domains: av 33506 stddev 0 min 33506 max 33506
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+
+Started mdrun on rank 0 Mon Nov 18 05:52:57 2024
+
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    2.23394e+03    5.99730e+03    6.49666e+03    4.32970e+02   -1.79908e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.03082e+03    1.76356e+04    4.15791e+04   -5.23983e+05    1.54816e+03
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+   -4.46208e+05    8.51760e+04   -3.61032e+05   -3.61013e+05    2.99866e+02
+ Pressure (bar)   Constr. rmsd
+    1.61641e+02    2.92712e-06
+
+           Step           Time
+           5000       10.00000
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    2.30221e+03    5.93533e+03    6.58784e+03    4.38065e+02   -2.08285e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.05646e+03    1.76298e+04    4.26237e+04   -5.23972e+05    1.54368e+03
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+   -4.45064e+05    8.53658e+04   -3.59698e+05   -3.60533e+05    3.00534e+02
+ Pressure (bar)   Constr. rmsd
+    2.56213e+02    3.25675e-06
+
+
+
+Received the INT signal, stopping within 80 steps
+
+           Step           Time
+           5440       10.88000
+
+Writing checkpoint, step 5440 at Mon Nov 18 06:01:28 2024
+
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    2.33859e+03    6.23608e+03    6.60662e+03    3.70623e+02   -1.62666e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    1.94713e+03    1.73998e+04    4.04058e+04   -5.20703e+05    1.54577e+03
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+   -4.44015e+05    8.47416e+04   -3.59274e+05   -3.60484e+05    2.98336e+02
+ Pressure (bar)   Constr. rmsd
+   -3.34189e+02    3.08346e-06
+
+
+Energy conservation over simulation part #1 of length 10.88 ps, time 0 to 10.88 ps
+  Conserved energy drift: 1.45e-03 kJ/mol/ps per atom
+
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 5441 steps using 55 frames
+
+   Energies (kJ/mol)
+           Bond            U-B    Proper Dih.  Improper Dih.      CMAP Dih.
+    2.21924e+03    6.06260e+03    6.58215e+03    3.73177e+02   -2.05294e+02
+          LJ-14     Coulomb-14        LJ (SR)   Coulomb (SR)   Coul. recip.
+    2.02730e+03    1.76432e+04    4.11463e+04   -5.22337e+05    1.55068e+03
+      Potential    Kinetic En.   Total Energy  Conserved En.    Temperature
+   -4.44938e+05    8.50193e+04   -3.59919e+05   -3.60732e+05    2.99314e+02
+ Pressure (bar)   Constr. rmsd
+    5.98681e-01    0.00000e+00
+
+          Box-X          Box-Y          Box-Z
+    7.75097e+00    7.75097e+00    5.48076e+00
+
+   Total Virial (kJ/mol)
+    2.79979e+04   -1.11196e+01   -1.88971e+02
+   -1.10313e+01    2.82944e+04   -1.20004e+02
+   -1.88879e+02   -1.19975e+02    2.87323e+04
+
+   Pressure (bar)
+    3.05710e+01   -6.21589e+00    1.72859e+01
+   -6.22482e+00    1.46336e-01    8.68360e+00
+    1.72766e+01    8.68078e+00   -2.89212e+01
+
+  T-Protein_JZ4T-Water_and_ions
+    2.98932e+02    2.99355e+02
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ Pair Search distance check            1100.076000        9900.684     0.1
+ NxN Ewald Elec. + LJ [F]            178872.814864    13952079.559    93.7
+ NxN Ewald Elec. + LJ [V&F]            1859.827648      239917.767     1.6
+ NxN Ewald Elec. [F]                   4717.266096      287753.232     1.9
+ NxN Ewald Elec. [V&F]                   48.961568        4112.772     0.0
+ 1,4 nonbonded interactions              37.510254        3375.923     0.0
+ Calc Weights                           546.918438       19689.064     0.1
+ Spread Q Bspline                     11667.593344       23335.187     0.2
+ Gather F Bspline                     11667.593344       70005.560     0.5
+ 3D-FFT                               26166.661324      209333.291     1.4
+ Solve PME                              397.236528       25423.138     0.2
+ Reset In Box                             2.278408           6.835     0.0
+ CG-CoM                                   2.311914           6.936     0.0
+ Bonds                                    7.241971         427.276     0.0
+ Propers                                 36.302352        8313.239     0.1
+ Impropers                                2.334189         485.511     0.0
+ Virial                                   3.690610          66.431     0.0
+ Stop-CM                                  1.842830          18.428     0.0
+ Calc-Ekin                               36.521540         986.082     0.0
+ Lincs                                    7.209325         432.559     0.0
+ Lincs-Mat                               38.979324         155.917     0.0
+ Constraint-V                           182.349674        1641.147     0.0
+ Constraint-Vir                           3.540790          84.979     0.0
+ Settle                                  55.977008       20711.493     0.1
+ CMAP                                     0.876001        1489.202     0.0
+ Urey-Bradley                            26.051508        4767.426     0.0
+-----------------------------------------------------------------------------
+ Total                                                14884519.637   100.0
+-----------------------------------------------------------------------------
+
+
+    D O M A I N   D E C O M P O S I T I O N   S T A T I S T I C S
+
+ av. #atoms communicated per step for force:  2 x 0.0
+ av. #atoms communicated per step for LINCS:  2 x 0.0
+
+
+      R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank, each using 2 OpenMP threads
+
+ Activity:              Num   Num      Call    Wall time         Giga-Cycles
+                        Ranks Threads  Count      (s)         total sum    %
+--------------------------------------------------------------------------------
+ Domain decomp.            1    2         68       1.178          4.940   0.2
+ Neighbor search           1    2         69       6.101         25.575   1.2
+ Force                     1    2       5441     417.773       1751.336  81.8
+ PME mesh                  1    2       5441      66.054        276.905  12.9
+ NB X/F buffer ops.        1    2      10813       7.597         31.846   1.5
+ Write traj.               1    2          3       0.054          0.224   0.0
+ Update                    1    2       5441       3.575         14.986   0.7
+ Constraints               1    2       5441       5.800         24.315   1.1
+ Rest                                              2.384          9.995   0.5
+--------------------------------------------------------------------------------
+ Total                                           510.517       2140.122 100.0
+--------------------------------------------------------------------------------
+ Breakdown of PME mesh activities
+--------------------------------------------------------------------------------
+ PME spread                1    2       5441      19.973         83.729   3.9
+ PME gather                1    2       5441      20.019         83.919   3.9
+ PME 3D-FFT                1    2      10882      23.632         99.069   4.6
+ PME solve Elec            1    2       5441       0.996          4.175   0.2
+--------------------------------------------------------------------------------
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     1021.032      510.517      200.0
+                 (ns/day)    (hour/ns)
+Performance:        1.842       13.032
+Finished mdrun on rank 0 Mon Nov 18 06:01:28 2024
+

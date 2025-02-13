@@ -1,0 +1,84 @@
+Remarks FR1_CNS.top created by acpype (v: 2023.10.27) on Tue Dec  3 13:17:40 2024
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS c3_     12.010
+MASS hc_      1.008
+
+RESIdue JZ4
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM C4    TYPE= c3_   CHARGE=  -0.0931 END
+ATOM C13   TYPE= c3_   CHARGE=  -0.0931 END
+ATOM C14   TYPE= c3_   CHARGE=  -0.0814 END
+ATOM H1    TYPE= hc_   CHARGE=   0.0324 END
+ATOM H2    TYPE= hc_   CHARGE=   0.0324 END
+ATOM H3    TYPE= hc_   CHARGE=   0.0324 END
+ATOM H4    TYPE= hc_   CHARGE=   0.0324 END
+ATOM H5    TYPE= hc_   CHARGE=   0.0324 END
+ATOM H6    TYPE= hc_   CHARGE=   0.0324 END
+ATOM H7    TYPE= hc_   CHARGE=   0.0367 END
+ATOM H8    TYPE= hc_   CHARGE=   0.0367 END
+
+{ Bonds: atomName1  atomName2 }
+BOND C4    H1   
+BOND C4    H2   
+BOND C4    H3   
+BOND C13   H4   
+BOND C13   H5   
+BOND C13   H6   
+BOND C14   H7   
+BOND C14   H8   
+BOND C4    C14  
+BOND C13   C14  
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe C4    C14   H7   
+ANGLe C4    C14   H8   
+ANGLe C13   C14   H7   
+ANGLe C13   C14   H8   
+ANGLe C14   C4    H1   
+ANGLe C14   C4    H2   
+ANGLe C14   C4    H3   
+ANGLe C14   C13   H4   
+ANGLe C14   C13   H5   
+ANGLe C14   C13   H6   
+ANGLe H1    C4    H2   
+ANGLe H1    C4    H3   
+ANGLe H2    C4    H3   
+ANGLe H4    C13   H5   
+ANGLe H4    C13   H6   
+ANGLe H5    C13   H6   
+ANGLe H7    C14   H8   
+ANGLe C4    C14   C13  
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral C4    C14   C13   H4   
+DIHEdral C4    C14   C13   H5   
+DIHEdral C4    C14   C13   H6   
+DIHEdral H1    C4    C14   C13  
+DIHEdral H2    C4    C14   C13  
+DIHEdral H3    C4    C14   C13  
+DIHEdral H1    C4    C14   H7   
+DIHEdral H1    C4    C14   H8   
+DIHEdral H2    C4    C14   H7   
+DIHEdral H2    C4    C14   H8   
+DIHEdral H3    C4    C14   H7   
+DIHEdral H3    C4    C14   H8   
+DIHEdral H4    C13   C14   H7   
+DIHEdral H4    C13   C14   H8   
+DIHEdral H5    C13   C14   H7   
+DIHEdral H5    C13   C14   H8   
+DIHEdral H6    C13   C14   H7   
+DIHEdral H6    C13   C14   H8   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+
+END {RESIdue JZ4}
+
+set echo=true end

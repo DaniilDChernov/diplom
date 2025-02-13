@@ -1,0 +1,9 @@
+parm system.prmtop                # Укажите вашу AMBER топологию
+trajin md_0_10.mdcrd           # Укажите вашу траекторию
+
+autoimage origin                  # Центрирует белок или основную молекулу
+center :protein mass origin          # Центрирует выбранные остатки (например, белок)
+image origin center familiar      # Перемещает атомы, чтобы они были внутри основной ячейки
+trajout trajectory_centered.mdcrd # Сохраняет центрированную траекторию
+run                               # Запускает обработку
+

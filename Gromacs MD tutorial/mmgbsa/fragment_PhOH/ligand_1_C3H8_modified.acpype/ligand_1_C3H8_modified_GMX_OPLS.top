@@ -1,0 +1,19 @@
+; ligand_1_C3H8_modified_GMX_OPLS.top created by acpype (v: 2023.10.27) on Sun Dec  1 02:58:52 2024
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include ligand_1_C3H8_modified_GMX.itp topology
+#include "ligand_1_C3H8_modified_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_ligand_1_C3H8_modified.itp"
+#endif
+
+[ system ]
+ ligand_1_C3H8_modified
+
+[ molecules ]
+; Compound        nmols
+ ligand_1_C3H8_modified 1     

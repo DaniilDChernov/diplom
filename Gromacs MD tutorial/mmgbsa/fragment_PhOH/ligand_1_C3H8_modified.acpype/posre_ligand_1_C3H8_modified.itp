@@ -1,0 +1,7 @@
+; posre_ligand_1_C3H8_modified.itp created by acpype (v: 2023.10.27) on Sun Dec  1 02:58:52 2024
+
+[ position_restraints ]
+; atom  type      fx      fy      fz
+     1     1  1000  1000  1000
+     2     1  1000  1000  1000
+     3     1  1000  1000  1000
